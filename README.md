@@ -8,3 +8,5 @@ Something I learned from this assigment is not to fear github. I always avoided 
 
 18.119.111.116
 ssh -i ~/keys/production.pem ubuntu@53.104.2.123
+ssh -i ~/documents/jangofett.pem ubuntu@ 18.119.111.116
+webcoding260frodobaggins.click
