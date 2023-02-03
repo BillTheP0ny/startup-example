@@ -10,3 +10,4 @@ Something I learned from this assigment is not to fear github. I always avoided 
 ssh -i ~/keys/production.pem ubuntu@53.104.2.123
 ssh -i ~/documents/jangofett.pem ubuntu@ 18.119.111.116
 webcoding260frodobaggins.click
+ssh -i jangofett.pem ubuntu@webcoding260frodobaggins.click
