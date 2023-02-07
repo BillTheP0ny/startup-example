@@ -12,3 +12,6 @@ ssh -i ~/documents/jangofett.pem ubuntu@ 18.119.111.116
 webcoding260frodobaggins.click
 ssh -i jangofett.pem ubuntu@webcoding260frodobaggins.click
 in VI editor if esc don't work another way is to press Ctrl + c or ctrl + z command to exit the vi editor forcefully. press ZZ (shift+z+z). it will save and exit. Ctrl + [ will also work like escape key.
+
+./deployWebsite.sh -k ~/documents/jangofett.pem -h webcoding260frodobaggins.click
+in folter website
