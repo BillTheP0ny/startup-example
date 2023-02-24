@@ -1,15 +1,15 @@
-.header {
+header {   
     text-align: center;
     padding: 3px;
-    background-color: gainsboro;
-    color: white;
+    background-color: lightgray;
+    color: gold;
   }
 
-  footer {
+footer {
     text-align: center;
     padding: 3px;
-    background-color: gainsboro;
-    color: white;
+    background-color: lightgray;
+    color: gold;
   }
 
 #buttons{
