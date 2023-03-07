@@ -26,3 +26,7 @@ Something great that I learned from this CSS simon project was that bootstrap ca
 From this startup application I learned so much! I never quite knew how to format HTML and CSS together. I mena we had done examples , but I had never done it all on my own and you learn so much when you do it all on your own. I learned how to format text, pictures and input fields in a organized manner. One of the harder things I encountered was adding both a header and footer with a bakcground color. This took me along time to get working, but it was very satisfying when it finally worked. I also learned that the deploy files isn't a command it is a class that needs to be called from terminal. 
 
 ./deployFiles.sh -k /Users/bilboswaggins/documents/jangofett.pem -h simon.webcoding260frodobaggins.click -s startup
+
+
+
+I learned alot in my simon javascript assingment. One of the most important things I learned was how to connect Javascript to CSS and HTML. I know we had learned about it and tried it a little, but this was alot more practice which gave me a great foundation for my start up project. I found the login.js javascripit file to be especially intersting becuase loggin in a user seems complicated, but it was done in three lines of code and was very simple to understand. I also thought it was fun to change the sound of the beeps for the simon machine. I thought it was really cool how the beeps were controlled by a number. It makes sense I just never thought of it.
