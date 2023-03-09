@@ -233,6 +233,31 @@ ls -la  The following command is ls which is short for list. This command lists 
 
 The ssh command provides a secure encrypted connection between two hosts over an insecure network.
 
+D) <img src="/images/picture.png" /
+
+font weight makes text bold
+
+spacing between elements is margin 
+
+spacing within an element is padding
+
+C) float: right; - to get it to float right
+
+How would you set the width of an element to be 100%? Include complete punctuation.
+B) width: 100%;
+
+How would you specify that a set of CSS properties applies to the following div?
+<div id="content">
+A) #content
+
+How would you specify that a set of CSS properties applies to the following div?
+<div class="special">
+C) .special
+
+What pseudo-selector would you add to an element to show a style when the mouse is over an element? Include the necessary punctuation.
+D) :hover
+
+
 
 
 
