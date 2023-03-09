@@ -334,6 +334,14 @@ background-color: lightblue;
 In HTML, <em> is usedto identify
 italicized
 
+What would you use in jQuery to select all p elements on the page?
+$("p")
+
+
+Create a new element and append it to the ul element
+$("#btn2").click(function(){
+$("ol").append("<li>Appended item</li>");
+
 
 
 
