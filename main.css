@@ -5,6 +5,104 @@ header {
     color: gold;
   }
 
+  #box-menu {
+    display: flex;
+    margin: 50px;
+  }
+  #box-menu .menu-img {
+    overflow: hidden;
+  }
+  #box-menu .menu-img img {
+    display: block;
+  }
+  #menu img {
+    display: none;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+button{
+    background-color: rebeccapurple;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+}
+button:hover{
+    background-color: orange;
+}
+#popup{
+    display: none;
+}
+.popup-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(96 95 127 / 70%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.popup{
+    background-color: #ffffff;
+    padding: 20px 30px;
+    width: 50%;
+    border-radius: 15px;
+}
+.close-popup{
+    display: flex;
+    justify-content: flex-end;
+}
+.close-popup a{
+    font-size: 1.2rem;
+    background-color: red;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+}
+.popup > h2{
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.popup > p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.popup-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid rebeccapurple;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 10px 0px;
+    transition: .2s all ease-in;
+}
+.popup-btn:hover{
+    background-color: rebeccapurple;
+    color: #fff;
+}
+
 footer {
     text-align: center;
     padding: 3px;
@@ -58,3 +156,5 @@ body{
 .p{
     background-color: black;
 }
+
+
