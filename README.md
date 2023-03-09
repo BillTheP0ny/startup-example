@@ -356,3 +356,8 @@ text.replace(petRegex, 'animal');
 petRegex.test(text);
 // RETURNS: true
 
+
+
+
+
+Something really cool I learned from this Startup javascript project was how to get a button to create a pop up. I had an incredibly hard time getting this to work. The first mistake I made was forgetting to link my java page to my html page. I also forgot some of the javaimports I was supposed to import which led to a good amount of unnessicary debuggging. I also learned how to transition pictures from one to another on the swip of a button. I also had to do more debuggin than usual becuase my program included javascript this time. Something else I learned was that certin javascript elements such as fade in/out need css. I thought CSS was just optional for a better look, but it is actually much more useful than I knew.
