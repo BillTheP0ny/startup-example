@@ -227,6 +227,14 @@ Defines teletype text
 <video>	Defines embedded video content
 <wbr>	Defines a possible line-break
 
+The sudo command allows you to run programs with the security privileges of another user
+
+ls -la  The following command is ls which is short for list. This command lists all files in a directory.
+
+The ssh command provides a secure encrypted connection between two hosts over an insecure network.
+
+
+
 
 
 
