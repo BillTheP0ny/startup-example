@@ -257,9 +257,82 @@ C) .special
 What pseudo-selector would you add to an element to show a style when the mouse is over an element? Include the necessary punctuation.
 D) :hover
 
+<strong> creates bold text
+
+change font size
+#header{
+font-size: 250%
+}
+
+MouseEvents
+onClick();
+onMouseOut(); //when the user mouses over, or out of, an HTML object
+onmousedown(), onmouseup(); //part of mouse-click
+dblclick()
+hover()
+mouseenter(); //when mouse enters an element
+
+Which code snippet will select all p elements and remove them?
+$("p").remove();
+
+Which jQuery code snippet will select <li class='source'> </li> element and change the text to 'AP'
+$(".source").text("AP");
 
 
+Which code snippet will select all p elements and remove them?
+$("p").remove();
 
+
+Which jQuery code snippet will create a new h1 element with the text 'Breaking news' and prepend it to <div class='article'>...</div> element
+$(".article").append("<h1>Cool</h1>");
+
+
+Which jQuery code snippet will select the ul element and add the class "attribution"?
+$("ul").addClass("intro");
+
+
+Which jQuery code snippet will select the <p class="description">..</p> and remove the class "description".
+$("p").removeClass("description");
+
+if this is what they are asking??
+
+
+Which jQuery code will create a new li element with the class author and append it to
+$("ol").append("<li class='intro'>Appended item</li>");
+
+
+Which jQuery code snippet will select the a element and change the text to "Read more"
+$(".source").text("Read More");
+$("#test").text("Read More");
+
+
+Which jQuery code snippet will select the next sibling of the <p class="description>.. </p> element
+$(p.description).next()
+
+
+Which jQuery code snippet will select the previous sibling of the ul element and change its text to "Breaking news"?
+$("ul.ENTER_ID_HERE").prev().text("Breaking News");
+
+
+In creating a new web page, what is the presentation Layer?
+CSS
+  
+  behviorala layer- javascript
+
+
+content layer HTML
+
+  How would you use CSS tochangeall the div elements to have a background color of blue?
+div{
+background-color: lightblue;
+}
+  
+  Which HTML Tag would you use to create a numbered list?
+<ol><li></li></ol>
+
+
+In HTML, <em> is usedto identify
+italicized
 
 
 
