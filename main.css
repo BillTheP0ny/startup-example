@@ -31,24 +31,23 @@ body{
 }
 button{
     background-color: orange;
-    outline: none;
+    outline: black;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-weight: bold;
     font-size: 1.5rem;
     color: #ffffff;
     margin: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
     cursor: pointer;
-    transition: .2s all ease-in-out;
+    transition: .4s all ease-in-out;
 }
 
 .container {
   position: relative;
 }
 
-/* Bottom right text */
 .text-block {
   position: absolute;
   bottom: 20px;
@@ -170,9 +169,6 @@ body{
 
 .p{
     background-color: black;
-}
-
-.testtest{
 }
 
 .mainContent{
