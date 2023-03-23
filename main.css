@@ -1,47 +1,47 @@
-header {   
-    text-align: center;
-    padding: 3px;
-    background-color: lightgray;
-    color: gold;
-  }
-
-  #box-menu {
-    display: flex;
-    margin: 50px;
-  }
-  #box-menu .menu-img {
-    overflow: hidden;
-  }
-  #box-menu .menu-img img {
-    display: block;
-  }
-  #menu img {
-    display: none;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+header {
+  text-align: center;
+  padding: 3px;
+  background-color: lightgray;
+  color: gold;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    position: relative;
+
+#box-menu {
+  display: flex;
+  margin: 50px;
 }
-button{
-    background-color: orange;
-    outline: black;
-    border: none;
-    padding: 10px 10px;
-    font-weight: bold;
-    font-size: 2 rem;
-    color: #ffffff;
-    margin: 30px;
-    border-radius: 10px;
-    box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
-    cursor: pointer;
-    transition: .4s all ease-in-out;
+#box-menu .menu-img {
+  overflow: hidden;
+}
+#box-menu .menu-img img {
+  display: block;
+}
+#menu img {
+  display: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+button {
+  background-color: orange;
+  outline: black;
+  border: none;
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: 2 rem;
+  color: #ffffff;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
 }
 
 .container {
@@ -57,123 +57,208 @@ button{
   padding-left: 20px;
   padding-right: 20px;
 }
-button:hover{
-    background-color: orange;
+button:hover {
+  background-color: orange;
 }
-#popup{
-    display: none;
+#popup {
+  display: none;
 }
-.popup-container{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(96 95 127 / 70%);
-    position: absolute;
-    top: 0;
-    left: 0;
+.popup-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(96 95 127 / 70%);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.popup{
-    background-color: #ffffff;
-    padding: 20px 30px;
-    width: 50%;
-    border-radius: 15px;
+.popup {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  width: 50%;
+  border-radius: 15px;
 }
-.close-popup{
-    display: flex;
-    justify-content: flex-end;
+
+#popupLogin {
+  display: none;
 }
-.close-popup a{
-    font-size: 1.2rem;
-    background-color: red;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 10px;
-    display: inline-block;
+.close-popup {
+  display: flex;
+  justify-content: flex-end;
 }
-.popup > h2{
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+.close-popup a {
+  font-size: 1.2rem;
+  background-color: red;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
 }
-.popup > p{
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.submit {
+  display: flex;
 }
-.popup-btn{
-    display: inline-block;
-    text-decoration: none;
-    border: 2px solid rebeccapurple;
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin: 10px 0px;
-    transition: .2s all ease-in;
+.submit a {
+  font-size: 1.2rem;
+  background-color: orange;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
 }
-.popup-btn:hover{
-    background-color: rebeccapurple;
-    color: #fff;
+.popup > h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.popup > p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.popup-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid rebeccapurple;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 10px 0px;
+  transition: 0.2s all ease-in;
+}
+.popup-btn:hover {
+  background-color: rebeccapurple;
+  color: #fff;
 }
 
 footer {
-    text-align: center;
-    padding: 3px;
-    background-color: lightgray;
-    color: gold;
-  }
+  text-align: center;
+  padding: 3px;
+  background-color: lightgray;
+  color: gold;
+}
 
-#buttons{
-    width: 50vw;
-    margin: auto;
-    text-align: center;
-  }
+#buttons {
+  width: 50vw;
+  margin: auto;
+  text-align: center;
+}
 button {
-    border: none;
-    color: black;
-    padding: 13px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 50px 20px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 40%;
-  }
-  
-  .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #960303;
-  }
-  
-  .button1:hover {
-    background-color: #960303;
-    color: blue;
-  }
+  border: none;
+  color: black;
+  padding: 13px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 50px 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 40%;
+}
 
-  .myimage{
-    width:400px;
-    height:500px;
-    transform:scale(1);
-  }
-body{
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #960303;
+}
+
+.button1:hover {
+  background-color: #960303;
+  color: blue;
+}
+
+.myimage {
+  width: 400px;
+  height: 500px;
+  transform: scale(1);
+}
+body {
   background-color: grey;
 }
 
-.container{
-    display:flex;
+.container {
+  display: flex;
 }
 
-.p{
-    background-color: black;
+.p {
+  background-color: black;
 }
 
-.mainContent{
+.mainContent {
   display: flex;
   flex-direction: column;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4caf50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4caf50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #ef3b3a;
+}

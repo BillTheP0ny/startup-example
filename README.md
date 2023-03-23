@@ -364,3 +364,7 @@ petRegex.test(text);
 
 
 Something really cool I learned from this Startup javascript project was how to get a button to create a pop up. I had an incredibly hard time getting this to work. The first mistake I made was forgetting to link my java page to my html page. I also forgot some of the javaimports I was supposed to import which led to a good amount of unnessicary debuggging. I also learned how to transition pictures from one to another on the swip of a button. I also had to do more debuggin than usual becuase my program included javascript this time. Something else I learned was that certin javascript elements such as fade in/out need css. I thought CSS was just optional for a better look, but it is actually much more useful than I knew. This project was alot of fun, but also alot of work I now feel quite confident in my abilites to create a basic website. I had also a hard time with the footer becuase it kept linking with the purchase button, but with the TAS help i learned that I didnt have it in the correct class and was missing some div closing tages.
+
+
+ask about adding sumbit buttonr ecipt to purchase sumbit button
+ask about storing user login info
