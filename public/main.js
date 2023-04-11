@@ -12,7 +12,10 @@ const popupLogin = document.getElementById("popupLogin");
 const usernameDisplay = document.getElementById("displayUsername");
 const usernamelogin = document.getElementById("name");
 const submitLogin = document.getElementById("submitLogin");
+let socket = null;
 console.log(popupLogin);
+
+configureWebSocket();
 
 clickBtn.addEventListener("click", () => {
   popup.style.display = "block";
@@ -32,6 +35,7 @@ submit.addEventListener("click", () => {
       email.value
     } ${"Your order total is 20$ and it will be charged"}`
   );
+  broadcastEvent(card.value, "Recently Purchased");
 });
 
 login.addEventListener("click", () => {
@@ -92,3 +96,41 @@ var newPhrase = phrase.replace(/John/gi, "user");
 var newPhrase2 = phrase2.split("England").join("country");
 document.write(newPhrase, newPhrase2);
 4;
+
+function callService(url, displayCallback) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      displayCallback(data);
+    });
+}
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === "http:" ? "ws" : "wss";
+  socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  socket.onopen = (event) => {
+    displayMsg("system", "game", "connected");
+  };
+  socket.onclose = (event) => {
+    displayMsg("system", "game", "disconnected");
+  };
+  socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    displayMsg("player", msg.from, msg.value);
+  };
+}
+
+function displayMsg(cls, from, msg) {
+  const chatText = document.querySelector("#websocket");
+  chatText.innerHTML =
+    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` +
+    chatText.innerHTML;
+}
+
+function broadcastEvent(from, value) {
+  const event = {
+    from: from,
+    value: value,
+  };
+  socket.send(JSON.stringify(event));
+}

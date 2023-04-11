@@ -69,11 +69,38 @@
                      <input type="name" id="name" name="name" />
                      <label for="emailLogin">password: </label>
                      <input type="password" id="password2" name="varEmail" />
-                     <button type = "button" onclick="submitBTN()" id ="submitLogin"> Submit</button>
+                     <button type = "button" onclick="loginUser()" id ="submitLogin"> Submit</button>
                   
                </div>
             </div>
          </div>
+
+         
+
+
+         <div id ="websocket">
+         
+
+
+         </div>
+
+
+         <div id= "displayRegister">
+            <button id="regBTN">Register</button>
+            <div id="reg">
+               <div class="popup-reg">
+                     <h2>Register</h2>
+                     <label for="registerName">Username: </label>
+                     <input type="name" id="registerName" name="registerName" />
+                     <label for="registerPassword">password: </label>
+                     <input type="password" id="registerPassword" name="registerPassword" />
+                     <button type = "button" onclick="createUser()" id ="submitLogin"> Submit</button>
+                  
+               </div>
+            </div>
+         </div>
+
+
       </div>
       <div class = "texttest">
       <p> Made from 50% cotten and 50% polyester this t shirt is a,</p>
@@ -87,8 +114,37 @@
          console.log("hello");
          usernameDisplay.innerHTML += usernamelogin.value;
        }</script>
+
+
+  <!-- Error dialog -->
+  <div class="modal fade" id="msgModal" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content text-dark">
+       <div class="modal-body">error message here</div>
+       <div class="modal-footer">
+         <button
+           type="button"
+           class="btn btn-secondary"
+           data-bs-dismiss="modal"
+         >
+           Close
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+
+
       <footer>
       <p><a href="https://github.com/BillTheP0ny/startup-example">link to my page</a></p>
       </footer>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+      <script src="login.js"></script>
    </body>
 </html>
