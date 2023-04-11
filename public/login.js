@@ -2,7 +2,7 @@
   let authenticated = false;
   const userName = localStorage.getItem("#name");
   if (userName) {
-    const nameEl = document.querySelector("#name");
+    const nameEl = document.querySelector("#playerName");
     nameEl.value = userName;
     const user = await getUser(nameEl.value);
     authenticated = user?.authenticated;
@@ -19,17 +19,32 @@
 })();
 
 async function loginUser() {
-  loginOrCreate(`/api/auth/login`);
+  const userName = document.querySelector("#loginName")?.value;
+  const password = document.querySelector("#loginPassword")?.value;
+  const response = await fetch(`/api/auth/login`, {
+    method: "post",
+    body: JSON.stringify({ email: userName, password: password }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  const body = await response.json();
+
+  if (response?.status === 200) {
+    localStorage.setItem("#name", userName);
+    window.location.href = "play.html";
+  } else {
+    const modalEl = document.querySelector("#msgModal");
+    // modalEl.querySelector(".modal-body").textContent = `⚠ Error: ${body.msg}`;
+    const msgModal = new bootstrap.Modal(modalEl, {});
+    msgModal.show();
+  }
 }
 
 async function createUser() {
-  loginOrCreate(`/api/auth/create`);
-}
-
-async function loginOrCreate(endpoint) {
   const userName = document.querySelector("#registerName")?.value;
   const password = document.querySelector("#registerPassword")?.value;
-  const response = await fetch(endpoint, {
+  const response = await fetch(`/api/auth/create`, {
     method: "post",
     body: JSON.stringify({ email: userName, password: password }),
     headers: {
