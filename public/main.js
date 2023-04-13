@@ -27,7 +27,7 @@ closeBtn.addEventListener("click", () => {
   popup.style.display = "none";
 });
 
-submit.addEventListener("click", () => {
+submit.addEventListener("click", async () => {
   alert(
     `${"Thank you"} ${card.value} ${". Your order will be shipped to"} ${
       address.value
@@ -35,6 +35,18 @@ submit.addEventListener("click", () => {
       email.value
     } ${"Your order total is 20$ and it will be charged"}`
   );
+
+  const newPurchase = {
+    address: address.value,
+    email: email.value,
+    name: card.value,
+  };
+
+  const response = await fetch("/api/purchases", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(newPurchase),
+  });
   broadcastEvent(card.value, "Recently Purchased");
 });
 

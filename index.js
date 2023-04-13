@@ -96,6 +96,17 @@ secureApiRouter.post("/score", async (req, res) => {
   res.send(scores);
 });
 
+secureApiRouter.get("/purchases", async (req, res) => {
+  const purchases = await DB.getPurchase();
+  res.send(purchases);
+});
+
+// SubmitScore
+secureApiRouter.post("/purchases", async (req, res) => {
+  await DB.addPurchase(req.body);
+  res.sendStatus(200);
+});
+
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });

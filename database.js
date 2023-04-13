@@ -16,6 +16,8 @@ const client = new MongoClient(url);
 const scoreCollection = client.db("startup").collection("score");
 const userCollection = client.db("startup").collection("login");
 
+const purhcaseCollection = client.db("startup").collection("purchase");
+
 function getUser(email) {
   return userCollection.findOne({ email: email });
 }
@@ -52,10 +54,21 @@ function getHighScores() {
   return cursor.toArray();
 }
 
+function addPurchase(purchases) {
+  purhcaseCollection.insertOne(purchases);
+}
+
+function getPurchase() {
+  const cursor = purhcaseCollection.find();
+  return cursor.toArray();
+}
+
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
   addScore,
   getHighScores,
+  getPurchase,
+  addPurchase,
 };
