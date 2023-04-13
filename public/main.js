@@ -102,12 +102,12 @@ $(".message a").click(function () {
   $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
 });
 
-var phrase = "John from ";
-var phrase2 = "England has recently bought a shirt!";
-var newPhrase = phrase.replace(/John/gi, "user");
-var newPhrase2 = phrase2.split("England").join("country");
-document.write(newPhrase, newPhrase2);
-4;
+//var phrase = "John from ";
+//var phrase2 = "England has recently bought a shirt!";
+//var newPhrase = phrase.replace(/John/gi, "user");
+//var newPhrase2 = phrase2.split("England").join("country");
+//document.write(newPhrase, newPhrase2);
+//4;
 
 function callService(url, displayCallback) {
   fetch(url)
