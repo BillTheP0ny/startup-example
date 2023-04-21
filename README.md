@@ -381,3 +381,169 @@ Something really cool I learned from this Startup javascript project was how to 
 
 ask about adding sumbit buttonr ecipt to purchase sumbit button
 ask about storing user login info
+
+From our frontend Javascript we can make requests to external services running anywhere in the world. This allows us to get external data, such as an inspirational quote, that we then inject into the DOM for the user to read. To make a web service request, we supply the URL of the web service to the fetch function that is built into the browser.The next step in building a full stack web application, is to create our own web service. Our web service will provide the static frontend files along with functions to handle fetch requests for things like storing data persistently, providing security, running tasks, executing application logic that you don't want your user to be able to see, and communicating with other users. The functionality provided by your web service represents the backend of your application.
+
+Generally the functions provided by a web service are called endpoints, or sometimes APIs. You access the web service endpoints from your frontend JavaScript with the fetch function. In the picture below, the backend web service is not only providing the static files that make up the frontend, but also providing the web service endpoints that the frontend calls to do things like get a user, create a user, or get high scores.
+
+Backend
+
+The backend web service can also use fetch to make requests to other web services. For example, in the image below the frontend uses fetch to request the user's data from the backend web service. The backend then uses fetch to call two other web services, one to get the user's data from the database, and another one to request subway routes that are near the user's home. That data is then combined together by the backend web service and returned to the frontend for display in the browser.
+
+Port	Protocol
+20	File Transfer Protocol (FTP) for data transfer
+22	Secure Shell (SSH) for connecting to remote devices
+25	Simple Mail Transfer Protocol (SMTP) for sending email
+53	Domain Name System (DNS) for looking up IP addresses
+80	Hypertext Transfer Protocol (HTTP) for web requests
+110	Post Office Protocol (POP3) for retrieving email
+123	Network Time Protocol (NTP) for managing time
+161	Simple Network Management Protocol (SNMP) for managing network devices such as routers or printers
+194	Internet Relay Chat (IRC) for chatting
+443	HTTP Secure (HTTPS) for secure web requests
+
+An HTTP request has this general syntax.
+
+<verb> <url path, parameters, anchor> <version>
+[<header key: value>]*
+[
+
+  <body>
+]
+
+If you list the files in directory you will notice that it has created a file named package.json. This file contains three main things: 1) Metadata about your project such as its name and the default entry JavaScript file, 2) commands that you can execute to do things like run, test, or distribute your code, and 3) packages that this project depends upon. With NPM initialized to work with your project, you can now use it to install a node package. As a simple example, we will install a package that knows how to tell jokes. This package is called give-me-a-joke. You can search for it on the NPM website, see how often it is installed, examine the source code, and learn about who created it. You install the package using npm install followed by the name of the package.With JavaScript we can write code that listens on a server port (e.g. 8080), receives HTTP requests, processes them, and then responds. We can use this to create a simple web service that we then execute using Node.js.
+
+The following example first initializes the use of NPM and installs the package http. The http package contains the functionality for listening on server ports and manipulating HTTP requests.
+
+In our example above we hard coded the store name to be provo. A real store endpoint would allow any store name to be provided as a parameter in the path. Express supports path parameters by prefixing the parameter name with a colon (:). Express creates a map of path parameters and populates it with the matching values found in the URL path. You then reference the parameters using the req.params object. Using this pattern you can rewrite our getStore endpoint as follows.
+
+app.get('/store/:storeName', (req, res, next) => {
+  res.send({ name: req.params.storeName });
+}); if you wanted an endpoint that used the POST or DELETE HTTP verb then you just use the post or delete function on the Express app object.
+
+100	Continue	The service is working on the request
+200	Success	The requested resource was found and returned as appropriate.
+201	Created	The request was successful and a new resource was created.
+204	No Content	The request was successful but no resource is returned.
+304	Not Modified	The cached version of the resource is still valid.
+307	Permanent redirect	The resource is no longer at the requested location. The new location is specified in the response location header.
+308	Temporary redirect	The resource is temporarily located at a different location. The temporary location is specified in the response location header.
+400	Bad request	The request was malformed or invalid.
+401	Unauthorized	The request did not provide a valid authentication token.
+403	Forbidden	The provided authentication token is not authorized for the resource.
+404	Not found	An unknown resource was requested.
+408	Request timeout	The request takes too long.
+409	Conflict	The provided resource represents an out of date version of the resource.
+418	I'm a teapot	The service refuses to brew coffee in a teapot.
+429	Too many requests	The client is making too many requests in too short of a time period.
+500	Internal server error	The server failed to properly process the request.
+503	Service unavailable	The server is temporarily down. The client should try again with an exponential back off.
+
+The ability to make HTTP requests from JavaScript is one of the main technologies that changed the web from static content pages (Web 1.0) to one of web applications (Web 2.0) that fully interact with the user. Microsoft introduced the first API for making HTTP requests from JavaScript with the XMLHttpRequest API.
+
+Today, the fetch API is the preferred way to make HTTP requests. The fetch function is built into the browser's JavaScript runtime. This means you can call it from JavaScript code running in a browser.
+
+The basic usage of fetch takes a URL and returns a promise. The promise then function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type application/json you can use the json function on the response object to convert it to a JavaScript object.
+
+The following example makes a fetch request to get and display an inspirational quote.
+
+fetch('https://api.quotable.io/random')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+Response
+
+{
+  content: 'Never put off till tomorrow what you can do today.',
+  author: 'Thomas Jefferson',
+};
+To do a POST request you populate the options parameter with the HTTP method and headers.
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'test title',
+    body: 'test body',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+  
+  Using Mongo from your code
+With that all done, you should be good to use Atlas from both your development and production environments. You can test that things are working correctly with the following example.
+
+const { MongoClient } = require('mongodb');
+const config = require('./dbConfig.json');
+
+async function main() {
+  // Connect to the database cluster
+  const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+  const client = new MongoClient(url);
+  const db = client.db('rental');
+  const collection = db.collection('house');
+
+  // Test that you can connect to the database
+  (async function testConnection() {
+    await client.connect();
+    await db.command({ ping: 1 });
+  })().catch((ex) => {
+    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    process.exit(1);
+  });
+
+  // Insert a document
+  const house = {
+    name: 'Beachfront views',
+    summary: 'From your bedroom to the beach, no shoes required',
+    property_type: 'Condo',
+    beds: 1,
+  };
+  await collection.insertOne(house);
+
+  // Query the documents
+  const query = { property_type: 'Condo', beds: { $lt: 2 } };
+  const options = {
+    sort: { score: -1 },
+    limit: 10,
+  };
+
+  const cursor = collection.find(query, options);
+  const rentals = await cursor.toArray();
+  rentals.forEach((i) => console.log(i));
+}
+
+main().catch(console.error);
+
+avaScript running on a browser can initiate a websocket connection with the browser's WebSocket API. First you create a WebSocket object by specifying the port you want to communicate on.
+
+You can then send messages with the send function, and register a callback using the onmessage function to receive messages.
+
+const socket = new WebSocket('ws://localhost:9900');
+
+socket.onmessage = (event) => {
+  console.log('received: ', event.data);
+};
+
+socket.send('I am listening');
+The server uses the ws package to create a WebSocketServer that is listening on the same port the browser is using. By specifying a port when you create the WebSocketServer you are telling the server to listen for HTTP connections on that port and to automatically upgrade them to a WebSocket connection if the request has a connection: Upgrade header.
+
+When a connection is detected it calls the server's on connection callback. The server can then send messages with the send function, and register a callback using the on message function to receive messages.
+
+Some common functional pieces in a web application chain include:
+
+Code repository - Stores code in a shared, versioned, location.
+Linter - Removes, or warns, of non-idiomatic code usage.
+Prettier - Formats code according to a shared standard.
+Transpiler - Compiles code into a different format. For example, from JSX to JavaScript.
+Polyfill - Generates backward compatible code for supporting old browser versions that do not support the latest standards.
+Bundler - Packages code into bundles for delivery to the browser. This enables compatibility (for example with ES6 module support), or performance (with lazy loading).
+Minifier - Removes whitespace and renames variables in order to make code smaller and more efficient to deploy.
+Testing - Automated tests at multiple levels to ensure correctness.
+Deployment - Automated packaging and delivery of code from the development environment to the production environment.
