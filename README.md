@@ -636,3 +636,209 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Clicker />);
 
 
+
+
+Show answers
+
+1 - Quiz
+Port 80 is reserved for?
+20sec
+HTTP *
+HTTPS
+FTP
+SSH
+
+2 - Quiz
+HTTP status codes in the 300 range are for?
+20sec
+Server errors
+Client errors
+Content redirects or caching *
+Success
+
+3 - Quiz
+Which is NOT a standard HTTP header?
+20sec
+Content-Type
+Host
+Cookie
+Language *
+
+4 - Quiz
+Cookies allow:
+20sec
+A server to store data on the client *
+A client to store data on the server
+A client or server to store data on either
+For cache control
+
+5 - Quiz
+For the request [GET] /fav/george what is logged?
+60sec
+
+app.user(function (req, res, next) {
+console.log('paul');
+next();
+});
+
+app.put('/fav/:person', (req, res, next) -> {
+console.log('ringo');
+next();
+});
+
+app.get(' /*', (req, res, next) -> {
+console.log("john");
+next();
+});
+
+app.use((_req, res) -> res.send());
+paul ringo george john
+paul john
+paul ringo john
+paul george john *
+
+6 - Quiz
+Which Express middleware will match this fetch request?
+30sec
+const r = await fetch('/fav/ringo', {
+method: "DELETE'
+});
+app.get('/fav/:id', () => {})
+app.delete('/favorite/:id', () => {})
+app.delete(/fav\/(.*)/, () => {}) *
+app.get('/ringo', () => {})
+
+7 - Quiz
+What document matches this MongoDB query?
+30sec
+
+{ $or: [{name:/J.*/}, {score: {$lt:3}}]}
+{ name: "harry", score: 5 }
+{ name: "bud", score:3 }
+{ name: john, score: 337 }
+{ name: "Walke", score: -55 } *
+
+8 - Quiz
+Why is hashing stored passwords important?
+30sec
+It improves performance
+It makes it so a use can retrieve their password
+It improves security by making the password unreadable *
+It validates how good the password is
+
+9 - Quiz
+Given the following code what will console.log print?
+
+const { WebSockerServer} = require('ws');
+const wss = new WebSocketServer({ port: 9900 });
+
+wss.on('connection', (ws) -> {
+ws.on('message', (data) -> {
+const msg = String.fromCharCode(...data);
+ws.send("Server:${msg}');
+});
+});
+
+//Excecuted on browser
+const socket = new WebSocket('ws//localhost:9900);
+socket.onmessage = (event) -> {
+console.log('Client:${event.data}');
+};
+socket.send('Hello');
+60sec
+Client:Server:Hello *
+Hello:Client:Server
+Hello:Server:Client
+Server:Client:Hello
+
+10 - Quiz
+What value does WebSocket add to HTTP?
+30sec
+It is peer to peer instead of client to server *
+It runs using Token Ring
+It uses proof of work to demonstrate security
+It removes the need keep a connection open
+
+11 - Quiz
+What is NOT a purpose of JSX?
+30sec
+To combine CSS, HTML, and JavaScript *
+To inject your HTML into your JavaScript
+To componentize your HTML
+To allow for composability of your HTML
+
+12 - Quiz
+What will component A initially display?
+90sec
+
+const B = () -> <b>burger</b>;
+const C = () -> <b>fish</b>;
+const D = () -> <b>taco</b>;
+const A = () -> {
+const [v, updateV] = React.userState(false);
+const [x, updateX] = React.userState(B);
+
+let o = <C />;
+if (v){
+o=<B />;
+}
+
+React.useEffect(() -> updateX(D), [v]);
+
+return (
+<p onClick={() -> updateV(true)}>{x}{o}</p>
+);
+};
+burgerfish *
+tacofish
+burgerburger
+tacoburger
+
+13 - Quiz
+What component will the URL `/burger` render?
+30sec
+
+<BrowerserRouter>
+<div className = 'app'>
+<nav>
+<NavLink to ='/'>A</NavLink>
+<NavLink to ='/burger'>C</NavLink>
+</nav>
+
+<main>
+<Routes>
+<Route path = '/' element = {<A />} exact />
+<Route path = '/burger' elements = {>B />} />
+<Route path = '*' element = {<C />} />
+</Routes>
+</main>
+</div>
+</BrowserRouter>
+
+A
+B *
+C
+D
+
+14 - Quiz
+What does the command "NPM install ws" NOT do?
+30sec
+Locks the version of the websocket package for your application
+Adds the websocket source code to the node_modules directory
+Adds template code for websockets to your JavaScript *
+Adds a dependency to your package.json file
+
+15 - True or false
+You can use fetch in front-end and back-end code.
+20sec
+True *
+False
+
+16 - Quiz
+Which of the following is NOT true about a Linux daemon?
+30sec
+Executes independent of a user
+Starts when the computer is rebooted
+PM2 is an example of a daemon
+Cannot fork other processes *
+
