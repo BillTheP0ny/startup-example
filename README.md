@@ -676,7 +676,7 @@ For cache control
 For the request [GET] /fav/george what is logged?
 60sec
 
-app.user(function (req, res, next) {
+app.use(function (req, res, next) {
 console.log('paul');
 next();
 });
@@ -686,12 +686,18 @@ console.log('ringo');
 next();
 });
 
+app.get('/fav/:person", (req, res, next) -> {
+console.log(req.params.person);
+next();
+});
+
 app.get(' /*', (req, res, next) -> {
 console.log("john");
 next();
 });
 
 app.use((_req, res) -> res.send());
+
 paul ringo george john
 paul john
 paul ringo john
