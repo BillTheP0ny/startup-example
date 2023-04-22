@@ -848,3 +848,378 @@ Starts when the computer is rebooted
 PM2 is an example of a daemon
 Cannot fork other processes *
 
+
+What does the 'v-if' do?
+60sec
+<router-link to ="/">Login</router-link> |
+<router-link to="/voter">Voter</router-link>|
+<router-link v-if="isAdmin" to="/admin">Admin</router-;ink>
+Executes the link if isAdmin is true
+Clears the link text if isAdmin is false
+Removes the link from the DOM if isAdmin is false *
+Replaces the view with the 'to' value of the link when isAdmin is true
+
+2 - Quiz
+What does ':disabled' do?
+60sec
+Disables the userEmail property
+Disables the button if userEmail is true
+Disables the button if userEmail is false *
+Toggles the userEmail property
+
+3 - Quiz
+What does .prevent do on this form?
+60sec
+<form @submit.prevent ="login">
+<input v-model = "userEmail" placeholder = "your@emial.com" / >
+<button type = "submit" : disabled = "!userEmail">Login</button>
+Prevents the form from being submitted if login is false
+Prevents invalid values from being submitted
+Prevents the browser from doing its default form processing *
+Prevents the user from logging in
+
+4 - Quiz
+What is the difference between v-if and v-show
+60sec
+v-if sets the display to none, v-show removes from the DOM
+v-if removes from the DOM, v-show set the display to none *
+They are the same
+v-show removes from the DOM, v-if applies a class
+
+5 - Quiz
+What does v-model do?
+60sec
+form @submitt.prevent = "login">
+<input v-model = "userEmail" placeholder = "you@email.com" />
+<button type = "submitt" :disabled = "!userEmail">Login<?button>
+</form>
+Uses a template to populate the form
+Creates a binding with the userEmail data value *
+Validates the userEmail value
+Disables the input if userEmail is true
+
+6 - Quiz
+v-model does what type of binding
+60sec
+One directional. Form input to data.
+One directional. Data to form input.
+Bidirectional. Either way from form input to data. *
+Doesn't create a binding. That is v-bind.
+
+7 - Quiz
+A Vue component 'created' function...
+60sec
+Creates the component
+Returns true if the component is created
+Gets called before a component is created
+Gets called after a component is created *
+
+8 - Quiz
+A single file Vue component
+60sec
+Can execute natively in a browser
+May contain HTML, CSS, and JavaScript *
+Must contain JavaScript
+Can only be used by a router
+
+9 - True or false
+Component methods can be called from a template
+20sec
+True *
+False
+
+10 - Quiz
+The following Vue route will match a URL path like ...
+60sec
+constt router = [
+{
+path: '/info/:category',
+component: View1
+},
+/info/category/1
+/info
+/info/view1 *
+/info/category/view1
+
+11 - Quiz
+What function is called when the button is pressed?
+60sec
+<ofrm @submit.prevent="login">
+<input v-model="userEmail" placeholder = "you@email.com" />
+<buttton type = "submit" : disabled = "!userEmail">LOGIN</BUTTTON>
+</form> 
+login *
+userEmail
+submit
+form
+
+12 - Quiz
+What does v-for do?
+60sec
+<li v-for = "canidate in canidate" v-bind:key = "canidate.utrl">
+<CaniidateCard :canidate = "candidate" /> 
+</li>
+Creates a CandidateCard if candidate.url is true
+Applies candidate to the CandidateCard
+Forwards the candidate to the bind key
+Creates a CandidateCard for each of the candidates *
+
+13 - True or false
+Vue components can contain other components
+20sec
+True *
+False
+
+14 - Quiz
+What is not true about Express middleware
+60sec
+It allows you to inject custom processing of an HTTP request
+It can augment the data of an HTTP request
+It executes in the order it is defined
+It always executes unless an exception is thrown *
+
+15 - True or false
+You can write your own Express middleware
+20sec
+True *
+False
+
+16 - Quiz
+For the GET request '/dynamic', what will the console output?
+60sec
+app.use(function (req, res, next){
+console.log(0); next();
+});
+app.post('/dynamic', (req, res, next) -> {
+console.log(1); next();
+});
+[app.get('/dynamic', function (req, res , next){
+console.log(2); next();
+});
+
+app.use('/', userRouter);
+userRouter.get('/dynamic', (req, res, next) -> {
+console.log(3); nextt();
+});
+app.get('/dynamic', (req, res, next) -> {
+console.log(4);
+next();
+});
+
+0 1 2 3 4
+0 2 3
+0 2 4
+0 2 3 4 *
+
+17 - Quiz
+What request would not cause the following to throw an exception
+60sec
+app.use(bodyParser.json());
+app.use((req, res) -> {
+res.send(req.body.name.last);
+});
+POST request, multipart/form-data, {"name":{"last":"bido","first":"jojo"}}
+A GET request
+PUT request, application/json, {"name":{"last":"bido","first":"jojo"}} *
+A DELETE request
+
+18 - Quiz
+With REST, the HTTP methods GET, PUT, POST, and DELETE match ...
+60sec
+Get, Create, Update, Delete
+Get, Update, Create, Delete *
+List, Create, Update, Delete
+List, Create, Update, Archive
+
+19 - Quiz
+The following Mongoose schema ...
+60sec
+const reviewSchema = new mongoose.Schema({
+name: String, 
+comment: String,
+starts: {type: Number, default: 5},
+submitted: {type: Date, default: Date.now},
+});
+Allows 'submitted' to be a string
+Only allows documents if they have all of the defined fields
+Will overwrite 'stars' to always be 5
+Is satisfied by {name:'a', stars:3} *
+
+20 - True or false
+Mongoose schemas can have methods
+20sec
+True *
+False 
+
+21 - Quiz
+Salting your password hash
+30sec
+Makes them tasty
+Makes them unique *
+Should use the same salt for all passwords
+Will not slow down a hacker
+
+22 - Quiz
+HTTP Cookies
+30sec
+Originate from the server *
+Only get set on POST requests
+Are unsafe for storing credentials
+Originate on the browser
+
+23 - Quiz
+CORS does not
+60sec
+Allow a server to say what hostnames it will accept
+Get enforced by the browser
+Stop hackers from making HTTP requests *
+Allow a server to say what HTTP methods it will accept
+
+
+
+
+
+Everything in Express revolves around creating and using HTTP routing and middleware functions. You create an Express application by using NPM to install the Express package and then calling the express constructor to create the express application and listen for HTTP requests on a desired port.
+HTTP endpoints are implemented in Express by defining routes that call a function based upon an HTTP path. The Express app object supports all of the HTTP verbs as functions on the object. For example, if you want to have a route function that handles an HTTP GET request for the URL path /store/provo you would call the get method on the app.
+app.get('/store/provo', (req, res, next) => {
+  res.send({ name: 'provo' });
+});
+or ➜ curl localhost:8080/store/orem
+{"name":"orem"}
+If you wanted an endpoint that used the POST or DELETE HTTP verb then you just use the post or delete function on the Express app object.
+The standard Mediator/Middleware design pattern has two pieces: A mediator and middleware. Middleware represents componentized pieces of functionality. The mediator loads the middleware components and determines their order of execution. When a request comes to the mediator it then passes the request around to the middleware components. Following this pattern, Express is the mediator, and middleware functions are the middleware components.
+
+
+React: One of the primary purposes of a component is to generate user interface. This is done with the components render function. Whatever is returned from the render function is inserted into the component HTML element.
+
+As a simple example, a JSX file containing a React component element named Demo would cause React to load the Demo component, call the render function, and insert the result into the place of the Demo element.
+
+JSX
+
+<div>
+  Component: <Demo />
+</div>
+Notice that Demo is not a valid HTML element. The transpiler will replace this tag with the resulting rendered HTML.
+
+React component
+
+function Demo() {
+  const who = 'world';
+  return <b>Hello {who}</b>;
+}
+Resulting HTML
+
+<div>Component: <b>Hello world</b></p>
+
+propertires: JSX
+
+<div>Component: <Demo who="Walke" /><div>
+React component
+
+function Demo(props) {
+  return <b>Hello {props.who}</b>;
+}
+Resulting HTML
+
+<div>Component: <b>Hello Walke</b></div>
+Making the UI react to changes in user input or data, is one of the architectural foundations of React. React enables reactivity with three major pieces of a React component: props, state, and render.
+
+When a component's JSX is rendered, React parses the JSX and creates a list of any references to the component's state or prop objects. React then monitors those objects and if it detects that they have changed it will call the component's render function so that the impact of the change is visualized
+// The Survey component
+const Survey = () => {
+  const [color, updateColor] = React.useState('#737AB0');
+
+  // When the color changes update the state
+  const onChange = (e) => {
+    updateColor(e.target.value);
+  };
+  return (
+    <div>
+      <h1>Survey</h1>
+      {/* Pass the Survey color state as a property to the Question.
+          When to color changes the Question property will also be updated and rendered. */}
+      <Question color={color} />
+
+      <p>
+        <span>Pick a color: </span>
+        {/* Pass the Survey color state as a property to the input element.
+            When to color changes, the input property will also be updated and rendered. */}
+        <input type='color' onChange={(e) => onChange(e)} value={color} />
+      </p>
+    </div>
+  );
+};
+
+// The Question component
+const Question = ({ color }) => {
+  const [answer, updateAnswer] = React.useState('pending...');
+
+  function onChange({ target }) {
+    updateAnswer(target.value);
+  }
+
+  return (
+    <div>
+      <span>Do you like this</span>
+      {/* Color rerendered whenever the property changes */}
+      <span style={{ color: color }}> color</span>?
+      <label>
+        <input type='radio' name='answer' value='yes' onChange={(e) => onChange(e)} />
+        Yes
+      </label>
+      <label>
+        <input type='radio' name='answer' value='no' onChange={(e) => onChange(e)} />
+        No
+      </label>
+      {/* Answer rerendered whenever the state changes */}
+      <p>Your answer: {answer}</p>
+    </div>
+  );
+};
+
+ReactDOM.render(<Survey />, document.getElementById('root'));
+
+A CLI is a program that runs from the console and usually provides an assortment of commands related to some specific purpose. For example, the AWS CLI allows you to interact with all of its services. This saves you the time of having to bring up the AWS website interface when you want to use an AWS service. Instead of opening a browser, logging in, navigating to a service, and walking through a bunch of UI dialogs, you simply open your console window and use the AWS CLI to execute a single command.
+
+To set up our React toolchain we will use the create-react-app CLI. This CLI will create and configure a template React application that you can use as a starting place for your application. create-react-app is an NPM package that works as a console program. Previously you used npm packages to add code libraries to your applications, but you can also run NPM packages as if they were a console program, if they are configured to do so.
+
+When you run npm start it executes the start script found in package.json.
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+  }
+This runs another NPM CLI package called react-scripts and tells it to build the application from the code and launch it with a development HTTP server similar to the Live Server extension you have been using in VS Code. react-scripts then launches your browser and points it to localhost:3000 where you can see the application rendering. Note that the development HTTP server will monitor changes to the application source and automatically rebuild it. Try this out by starting the application, editing the App.js file to contain something different, saving it, and looking at the browser window displaying the application.
+
+A web framework router provides essential functionality for single page applications. With a multiple web page application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser. With a single page application the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components.
+
+React does not have a standard router package, and there are many that you can choose from. We will use react-router-dom Version 6. The simplified routing functionality of React-router-dom derives from the project react-router for its core functionality. Do not confuse the two, or versions of react-router-dom before version 6, when reading tutorials and documentation.
+
+A basic implementation of the router consists of a BrowserRouter component that encapsulates the entire application and controls the routing action. The Link component captures user navigation events and modifies what is rendered by the Routes component by matching up the to and path attributes.
+
+// Inject the router into the application root DOM element
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  // BrowserRouter component that controls what is rendered
+  // NavLink component captures user navigation requests
+  // Routes component defines what component is routed to
+  <BrowserRouter>
+    <div className='app'>
+      <nav>
+        <NavLink to='/'>Home</Link>
+        <NavLink to='/about'>About</Link>
+        <NavLink to='/users'>Users</Link>
+      </nav>
+
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} exact />
+          <Route path='/about' element={<About />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='*' element={<Navigate to='/' replace />} />
+        </Routes>
+      </main>
+    </div>
+  </BrowserRouter>
+);
+
